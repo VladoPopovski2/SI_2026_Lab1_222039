@@ -1,4 +1,67 @@
-PS C:\Users\achan\OneDrive\Desktop\Ш\СИ\SI_2026_Lab1_222039> git log --oneline --graph --all
+9. git checkout -b feature-search-books
+
+10. git add SI2026Lab1Main.java
+git commit -m "Implement book search"
+
+11. git push -u origin feature-search-books
+
+12. git checkout master
+git merge feature-search-books
+
+13. git log --oneline --graph --all
 * 008dd30 (HEAD -> master, origin/feature-search-books, feature-search-books) Implement book search
 * 8427c7a (origin/master) Add starter code
 * d4bb9e9 Initial commit
+Ова спојување беше fast forward бидејќи master немаше нови commits откако беше креирана branch.
+
+14. git push origin master
+
+15. git checkout -b feature-borrow-book
+git checkout master
+git checkout -b feature-genre-report
+
+16. git checkout feature-borrow-book
+git add SI2026Lab1Main.java
+git commit -m "Implement borrow book"
+
+17. git checkout master
+git add SI2026Lab1Main.java
+git commit -m "Update borrow message on master"
+
+18. git checkout feature-genre-report
+git add SI2026Lab1Main.java
+git commit -m "Implement genre report"
+
+19. git push -u origin feature-borrow-book
+На Github -> Pull request - New pull request
+
+20. git push -u origin feature-genre-report
+На Github -> Pull request - New pull request
+
+21. git checkout feature-borrow-book
+git merge master
+Да, се случи конфликт во SI2026Lab1Main.java
+Го решив со избирање на една од двете пораки (Borrowed succesfully.)
+Користена стратегија за спојување: recursive (стандардно кога две гранки се дивергираат)
+
+22. git status
+On branch master
+Your branch is up to date with 'origin/master'.
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+23. git checkout master
+git merge feature-genre-report
+Ова не беше fast-forward бидејќи master имаше нов commit („Update borrow message on master“) откако feature-genr-report се branched off, па Git мораше да направи тројно спојување.
+
+24. git merge feature-borrow-book
+Ова беше исто така recursive бидејќи и master и feature-borrow-book имаа дивергентни комитирања (комитирањата за решавање на конфликти постојат на гранката)
+
+25. git push origin master
+
+26. git log --oneline --graph --all > logs.txt
+git add logs.txt 222039.txt
+git commit -m "Final commit"
+
+27. git push origin master
+
