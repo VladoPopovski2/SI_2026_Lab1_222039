@@ -94,6 +94,11 @@ class Library {
 
     // TODO: Implement in branch feature-genre-report
     public void printBooksByGenre(String genre) {
+        for (Book book : books) {
+            if (book.getGenre().equalsIgnoreCase(genre)) {
+                System.out.println(book);
+            }
+        }
     }
 
     public int countAvailableBooks() {
@@ -126,6 +131,8 @@ public class SI2026Lab1Main {
 
         System.out.println("Search for '1984': " + library.searchBookByTitle("1984")); // true
         System.out.println("Search for '1984': " + library.searchBookByTitle("The Wall")); // false
+
+        library.printBooksByGenre("Fantasy");
 
         System.out.println("Library initialized.");
     }
