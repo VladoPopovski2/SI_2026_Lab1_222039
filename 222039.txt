@@ -1,11 +1,17 @@
-9. git checkout -b feature-search-books
+9. Created feature-search-books branch
+git checkout -b feature-search-books
+Создава и се префрла на нова branch за имплементирање на функционалноста за пребарување.
 
-10. git add SI2026Lab1Main.java
+10. Implemented book search method
+git add SI2026Lab1Main.java
 git commit -m "Implement book search"
 
-11. git push -u origin feature-search-books
+11. Pushed branch and created Pull Request
+git push -u origin feature-search-books
+Потоа креирав PR на GitHub од feature-search-books to master.
 
-12. git checkout master
+12. Merged locally on master 
+git checkout master
 git merge feature-search-books
 
 13. git log --oneline --graph --all
@@ -14,54 +20,107 @@ git merge feature-search-books
 * d4bb9e9 Initial commit
 Ова спојување беше fast forward бидејќи master немаше нови commits откако беше креирана branch.
 
-14. git push origin master
+14. Synced master
+git push origin master
 
-15. git checkout -b feature-borrow-book
+15. Created two new branches
+git checkout -b feature-borrow-book
 git checkout master
 git checkout -b feature-genre-report
 
-16. git checkout feature-borrow-book
+16. Implemented borrow book feature
+git checkout feature-borrow-book
 git add SI2026Lab1Main.java
 git commit -m "Implement borrow book"
 
-17. git checkout master
+17. Updated borrow message on master
+git checkout master
 git add SI2026Lab1Main.java
 git commit -m "Update borrow message on master"
 
-18. git checkout feature-genre-report
+18. Implemented genre report feature
+git checkout feature-genre-report
 git add SI2026Lab1Main.java
 git commit -m "Implement genre report"
 
-19. git push -u origin feature-borrow-book
-На Github -> Pull request - New pull request
+19. Pushed feature-borrow-book and created PR
+git push -u origin feature-borrow-book
+Креиран Pull Request on GitHub.
 
-20. git push -u origin feature-genre-report
-На Github -> Pull request - New pull request
+20. Pushed feature-genre-report and created PR 
+git push -u origin feature-genre-report
+Креиран Pull Request on GitHub.
 
-21. git checkout feature-borrow-book
+21. Merged master into feature-borrow-book
+git checkout feature-borrow-book
 git merge master
 Да, се случи конфликт во SI2026Lab1Main.java
 Го решив со избирање на една од двете пораки (Borrowed succesfully.)
 Користена стратегија за спојување: recursive (стандардно кога две гранки се дивергираат)
 
-22. git status
+22. Post-merge status
+git status
 On branch master
 Your branch is up to date with 'origin/master'.
 All conflicts fixed but you are still merging.
   (use "git commit" to conclude merge)
 
-23. git checkout master
+23. Merged feature-genre-report into master
+git checkout master
 git merge feature-genre-report
 Ова не беше fast-forward бидејќи master имаше нов commit („Update borrow message on master“) откако feature-genr-report се branched off, па Git мораше да направи тројно спојување.
 
-24. git merge feature-borrow-book
+24. Merged feature-borrow-book into master
+git merge feature-borrow-book
 Ова беше исто така recursive бидејќи и master и feature-borrow-book имаа дивергентни комитирања (комитирањата за решавање на конфликти постојат на гранката)
 
-25. git push origin master
+25. Synced master with remote 
+git push origin master
 
-26. git log --oneline --graph --all > logs.txt
+26. Added documentation files
+git log --oneline --graph --all > logs.txt
 git add logs.txt 222039.txt
 git commit -m "Final commit"
 
-27. git push origin master
+27. Final sync
+git push origin master
 
+================================================================================
+PART 3
+================================================================================
+
+Step 28: Created a fork of the original repository
+- Fork created at: https://github.com/VladoPopovski2/SI_2026_Lab1_203043
+
+Step 29: Cloned the forked repository locally
+git clone https://github.com/VladoPopovski2/SI_2026_Lab1_203043.git SI_2026_Lab1_203043_fork
+cd SI_2026_Lab1_203043_fork
+
+Step 30: Created a new branch with index number
+git checkout -b 222039-library-update
+
+Step 31: Added 222039.txt
+
+Step 32: Modified Java file with a comment
+Added to SI2026Lab1Main.java at the top:
+// Updated by 222039
+
+Step 33: Committed the changes
+git add 222039.txt SI2026Lab1Main.java
+git commit -m "Add fork contribution"
+
+Step 34: Pushed the branch to the remote fork
+git push -u origin 222039-library-update
+
+Step 35: Created Pull Request from fork to original repository
+
+Step 36: Named the Pull Request
+Title: 222039-FORK
+
+Step 37: Wrote the Pull Request description
+Description:
+Vlado Popovski
+Fork contribution for lab 1
+
+Step 38: Created the Pull Request
+Clicked "Create pull request" to finalize.
