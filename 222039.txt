@@ -1,0 +1,4 @@
+PS C:\Users\achan\OneDrive\Desktop\Ш\СИ\SI_2026_Lab1_222039> git log --oneline --graph --all
+* 008dd30 (HEAD -> master, origin/feature-search-books, feature-search-books) Implement book search
+* 8427c7a (origin/master) Add starter code
+* d4bb9e9 Initial commit
